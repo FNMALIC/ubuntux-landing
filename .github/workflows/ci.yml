@@ -1,0 +1,90 @@
+name: CI/CD Static Website
+
+on:
+  push:
+    branches: [ main, staging ]
+  pull_request:
+    branches: [ main, staging ]
+
+concurrency:
+  group: static-site-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy Static Site
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.GHCR_USERNAME }}
+          password: ${{ secrets.GHCR_TOKEN }}
+
+      - name: Set variables based on branch
+        id: vars
+        run: |
+          USERNAME_LOWER=$(echo ${{ secrets.GHCR_USERNAME }} | tr '[:upper:]' '[:lower:]')
+          if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            echo "TAG=latest" >> $GITHUB_OUTPUT
+            echo "COMPOSE_FILE=docker-compose.yml" >> $GITHUB_OUTPUT
+            echo "SERVICE_NAME=ubuntux-landing" >> $GITHUB_OUTPUT
+            echo "DOMAIN=ubuntu-x.com" >> $GITHUB_OUTPUT
+          else
+            echo "TAG=staging" >> $GITHUB_OUTPUT
+            echo "COMPOSE_FILE=docker-compose.staging.yml" >> $GITHUB_OUTPUT
+            echo "SERVICE_NAME=ubuntux-landing-test" >> $GITHUB_OUTPUT
+            echo "DOMAIN=test.ubuntu-x.com" >> $GITHUB_OUTPUT
+          fi
+          echo "USERNAME_LOWER=$USERNAME_LOWER" >> $GITHUB_OUTPUT
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/${{ steps.vars.outputs.USERNAME_LOWER }}/ubuntux-landing:${{ steps.vars.outputs.TAG }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Deploy to server
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            cd ~/ubuntu-x/ubuntux-frontend
+            
+            # Pull the latest image
+            docker compose -f ${{ steps.vars.outputs.COMPOSE_FILE }} pull ${{ steps.vars.outputs.SERVICE_NAME }}
+            
+            # Restart the container
+            docker compose -f ${{ steps.vars.outputs.COMPOSE_FILE }} up -d ${{ steps.vars.outputs.SERVICE_NAME }}
+            
+            # Clean up unused images
+            docker image prune -f
+            
+            # Health check
+            echo "Performing health check..."
+            sleep 10
+            if curl -f https://${{ steps.vars.outputs.DOMAIN }}/ 2>/dev/null; then
+              echo "✅ Deployment successful - Site is accessible"
+            else
+              echo "⚠️ Warning: Health check failed, but deployment completed"
+              docker compose -f ${{ steps.vars.outputs.COMPOSE_FILE }} ps ${{ steps.vars.outputs.SERVICE_NAME }}
+              docker compose -f ${{ steps.vars.outputs.COMPOSE_FILE }} logs ${{ steps.vars.outputs.SERVICE_NAME }} --tail=50
+            fi

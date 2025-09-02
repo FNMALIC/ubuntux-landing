@@ -37,12 +37,12 @@ jobs:
           if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
             echo "TAG=latest" >> $GITHUB_OUTPUT
             echo "COMPOSE_FILE=docker-compose.yml" >> $GITHUB_OUTPUT
-            echo "SERVICE_NAME=ubuntux-landing-staging" >> $GITHUB_OUTPUT
+            echo "SERVICE_NAME=ubuntux-landing-test" >> $GITHUB_OUTPUT
             echo "DOMAIN=ubuntu-x.com" >> $GITHUB_OUTPUT
           else
             echo "TAG=staging" >> $GITHUB_OUTPUT
             echo "COMPOSE_FILE=docker-compose.staging.yml" >> $GITHUB_OUTPUT
-            echo "SERVICE_NAME=ubuntux-landing-staging" >> $GITHUB_OUTPUT
+            echo "SERVICE_NAME=ubuntux-landing-test" >> $GITHUB_OUTPUT
             echo "DOMAIN=test.ubuntu-x.com" >> $GITHUB_OUTPUT
           fi
           echo "USERNAME_LOWER=$USERNAME_LOWER" >> $GITHUB_OUTPUT

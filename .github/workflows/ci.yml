@@ -67,7 +67,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            cd ~/ubuntu-x/ubuntux-frontend
+            cd ~/ubuntu-x/ubuntux-landing
             
             # Pull the latest image
             docker compose -f ${{ steps.vars.outputs.COMPOSE_FILE }} pull ${{ steps.vars.outputs.SERVICE_NAME }}

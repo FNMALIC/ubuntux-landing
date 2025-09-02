@@ -630,9 +630,9 @@
         <!-- Enhanced Calculator Section -->
         <div class="bg-gradient-to-r from-[#2A2D9D] to-[#FCC062] p-0.5 rounded-lg shadow-xl">
             <div class="bg-white rounded-md overflow-hidden">
-                <div class="flex">
+                <div class="flex flex-col lg:flex-row">
                     <!-- Send From Section -->
-                    <div id="sendFromSection" class="calculator-split flex-1 py-16 px-6 bg-white relative overflow-hidden">
+                    <div id="sendFromSection" class="calculator-split flex-1 py-12 px-6 lg:py-16 lg:px-8 bg-white relative overflow-hidden">
                         <div class="absolute inset-0 opacity-10 transition-all duration-800" id="sendFromBg"></div>
                         <div class="relative z-10">
                             <div class="flex flex-col gap-4 max-w-md mx-auto">
@@ -648,11 +648,11 @@
                                         </select>
                                     </div>
 
-                                    <div class="flex gap-3">
+                                    <div class="flex gap-3 flex-wrap">
                                         <input type="text" id="sendFromCode" placeholder="Code" readonly
                                                class="w-20 outline-none border border-gray-300 text-xs rounded-md p-3 bg-gray-50"/>
                                         <input type="number" id="sendFromAmount" placeholder="Amount"
-                                               class="flex-1 outline-none border border-gray-300 text-xs rounded-md p-3 focus:border-blue-500 transition-colors"/>
+                                               class="flex-1 min-w-[150px] outline-none border border-gray-300 text-xs rounded-md p-3 focus:border-blue-500 transition-colors"/>
                                     </div>
                                 </div>
 
@@ -666,10 +666,10 @@
                     </div>
 
                     <!-- Divider -->
-                    <div class="w-0.5 bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
+                    <div class="h-0.5 lg:h-auto lg:w-0.5 bg-gradient-to-r lg:bg-gradient-to-b from-transparent via-gray-300 to-transparent mx-auto my-2 lg:my-0"></div>
 
                     <!-- Send To Section -->
-                    <div id="sendToSection" class="calculator-split flex-1 py-16 px-6 bg-white relative overflow-hidden">
+                    <div id="sendToSection" class="calculator-split flex-1 py-12 px-6 lg:py-16 lg:px-8 bg-white relative overflow-hidden">
                         <div class="absolute inset-0 opacity-10 transition-all duration-800" id="sendToBg"></div>
                         <div class="relative z-10">
                             <div class="flex flex-col gap-4 max-w-md mx-auto">
@@ -685,11 +685,11 @@
                                         </select>
                                     </div>
 
-                                    <div class="flex gap-3">
+                                    <div class="flex gap-3 flex-wrap">
                                         <input type="text" id="sendToCode" placeholder="Code" readonly
                                                class="w-20 outline-none border border-gray-300 text-xs rounded-md p-3 bg-gray-50"/>
                                         <input type="number" id="receivedAmount" placeholder="Received Amount" readonly
-                                               class="flex-1 outline-none border border-gray-300 text-xs rounded-md p-3 bg-gray-50"/>
+                                               class="flex-1 min-w-[150px] outline-none border border-gray-300 text-xs rounded-md p-3 bg-gray-50"/>
                                     </div>
                                 </div>
 
@@ -709,6 +709,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
     <script>

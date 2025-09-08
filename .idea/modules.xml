@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ubuntuxtst.netlify.app.iml" filepath="$PROJECT_DIR$/.idea/ubuntuxtst.netlify.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ubuntux.iml" filepath="$PROJECT_DIR$/.idea/ubuntux.iml" />
     </modules>
   </component>
 </project>

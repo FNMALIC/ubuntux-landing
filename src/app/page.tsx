@@ -1,0 +1,48 @@
+'use client'
+
+import Banner from "@/components/Banner";
+import Demo from "@/components/Demo";
+import Evaluate from "@/components/Evaluate";
+import Faq from "@/components/Faq";
+import Features from "@/components/Features";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Testimonial from "@/components/Testimonial";
+import { FadeInUp } from "@/components/animations/ScrollAnimations";
+
+export default function Home() {
+  return (
+    <main className="overflow-x-hidden">
+      {/* Header with its own animations */}
+      <Header />
+      
+      {/* Animated sections with staggered delays */}
+      <FadeInUp delay={100}>
+        <Evaluate />
+      </FadeInUp>
+      
+      <FadeInUp delay={200}>
+        <Features />
+      </FadeInUp>
+      
+      <FadeInUp delay={100}>
+        <Demo />
+      </FadeInUp>
+      
+      <FadeInUp delay={150}>
+        <Faq />
+      </FadeInUp>
+      
+      <FadeInUp delay={100}>
+        <Testimonial />
+      </FadeInUp>
+      
+      <FadeInUp delay={150}>
+        <Banner />
+      </FadeInUp>
+      
+      {/* Footer */}
+      <Footer />
+    </main>
+  );
+}

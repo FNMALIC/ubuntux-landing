@@ -62,11 +62,11 @@ const Features = () => {
   return (
     <div className="py-16">
       <h2 className="text-center text-4xl font-semibold">
-        What <span className="text-[#FCC062]">Features </span> make our app
+          The Ubuntu <span className="text-[#FCC062]">Touch  </span>
       </h2>
 
       <p className="text-center font-semibold mb-8 mt-4">
-        Brand new in the domain
+          Fun Features That Unite Us
       </p>
 
       <div className="flex gap-3 md:flex-row flex-col items-center">

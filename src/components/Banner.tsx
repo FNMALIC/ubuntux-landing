@@ -7,6 +7,7 @@ import Phone from "../images/topLeftPhone.png";
 import { ArrowRight, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import { FadeInUp, FadeInLeft, FadeInRight, FloatingAnimation, HoverScale } from "./animations/ScrollAnimations";
+import Link from "next/link";
 
 // orange  FCC062, FBB03B
 // blue 2A2D9D, 21237B
@@ -51,6 +52,7 @@ const Banner = (props: Props) => {
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <HoverScale scale={1.05}>
+                  <Link href="https://app-test.ubuntu-x.com" target="_blank" rel="noopener noreferrer">
                 <motion.button 
                   className="flex items-center gap-2 bg-gradient-to-b from-[#2A2D9D] to-[#21237B] text-white rounded-lg px-4 py-3 text-sm font-medium shadow-lg"
                   whileTap={{ scale: 0.95 }}
@@ -58,6 +60,7 @@ const Banner = (props: Props) => {
                   <Send size={16} />
                   <span>Start Sending Money</span>
                 </motion.button>
+                  </Link>
               </HoverScale>
 
               <HoverScale scale={1.02}>

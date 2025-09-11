@@ -5,6 +5,8 @@ import React, { useState } from "react";
 import logo from "../images/logo.png";
 import { ArrowDownRight, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+
 // orange  FCC062, FBB03B
 // blue 2A2D9D, 21237B
 
@@ -67,16 +69,18 @@ const Nav = (props: Props) => {
         </div>
 
         {/* Desktop CTA Button */}
-        <motion.button 
-          className="hidden lg:flex items-center gap-2 bg-gradient-to-b from-[#FCC062] to-[#FBB03B] rounded-md px-4 py-2 text-sm md:text-base text-black font-semibold shadow-sm"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <ArrowDownRight size={18} />
-          <span>Get Started</span>
-        </motion.button>
+          <Link href="https://app-test.ubuntu-x.com" target="_blank" rel="noopener noreferrer">
+              <motion.button
+                  className="hidden lg:flex items-center gap-2 bg-gradient-to-b from-[#FCC062] to-[#FBB03B] rounded-md px-4 py-2 text-sm md:text-base text-black font-semibold shadow-sm"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+              >
+                  <ArrowDownRight size={18} />
+                  <span>Get Started</span>
+              </motion.button>
+          </Link>
 
-        {/* Mobile Menu Button */}
+          {/* Mobile Menu Button */}
         <motion.button
           className="lg:hidden p-2 z-50 relative"
           onClick={toggleMenu}
@@ -133,18 +137,21 @@ const Nav = (props: Props) => {
                   </motion.p>
                 ))}
               </div>
-              
-              <motion.button 
-                className="flex items-center justify-center gap-2 bg-gradient-to-b from-[#FCC062] to-[#FBB03B] rounded-md py-3 text-base text-black font-semibold mt-auto mb-8 shadow-sm"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={toggleMenu}
-              >
-                <ArrowDownRight size={18} />
-                <span>Get Started</span>
-              </motion.button>
+
+                <Link href="https://app-test.ubuntu-x.com" target="_blank" rel="noopener noreferrer">
+                    <motion.button
+                        className="flex items-center justify-center gap-2 bg-gradient-to-b from-[#FCC062] to-[#FBB03B] rounded-md py-3 text-base text-black font-semibold mt-auto mb-8 shadow-sm"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.6 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={toggleMenu}
+                    >
+                        <ArrowDownRight size={18} />
+                        <span>Get Started</span>
+                    </motion.button>
+                </Link>
+
             </div>
           </motion.div>
         )}

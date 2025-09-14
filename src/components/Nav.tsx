@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import logo from "../images/logo.png";
 import { ArrowDownRight, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 type Props = {};
 
@@ -45,7 +46,7 @@ const Nav = (props: Props) => {
         }
     };
 
-    const menuItems = ["Home", "Features", "How it works", "FAQs", "Reviews"];
+    const menuItems = [ "Features", "How it works", "FAQs", "Reviews"];
 
     return (
         <>
@@ -94,7 +95,9 @@ const Nav = (props: Props) => {
                     whileTap={{ scale: 0.95 }}
                 >
                     <ArrowDownRight size={18} />
-                    <span>Get Started</span>
+                    <Link href={"https://app-test.ubuntu-x.com/"}>
+                        Start sending
+                    </Link>
                 </motion.button>
 
                 {/* Mobile Menu Button */}
@@ -164,7 +167,9 @@ const Nav = (props: Props) => {
                                 onClick={toggleMenu}
                             >
                                 <ArrowDownRight size={18} />
-                                <span>Get Started</span>
+                                <Link href={"https://app-test.ubuntu-x.com/"}>
+                                    Start sending
+                                </Link>
                             </motion.button>
                         </div>
                     </motion.div>

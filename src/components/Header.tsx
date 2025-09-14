@@ -9,6 +9,7 @@ import Image from "next/image";
 import { ArrowRight, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import { FadeInUp, FadeInLeft, FadeInRight, FloatingAnimation, Parallax, HoverScale } from "./animations/ScrollAnimations";
+import Link from "next/link";
 
 type Props = {};
 
@@ -31,9 +32,8 @@ const Header = (props: Props) => {
                 <Nav />
             </FadeInUp>
 
-            <FadeInUp delay={200} className="md:my-12 my-8">
-                <div className="bg-gradient-to-tr from-[#2A2D9D] to-[#21237B] rounded-xl md:rounded-2xl flex flex-col lg:flex-row gap-6 lg:gap-x-8 justify-between md:p-10 lg:p-20 p-6 sm:p-8 relative overflow-hidden">
-                    {/* Background with parallax effect */}
+            <FadeInUp delay={200} className=" my-8">
+                <div className="bg-gradient-to-tr from-[#2A2D9D] to-[#21237B] rounded-xl md:rounded-2xl flex flex-col lg:flex-row gap-6 lg:gap-x-8 justify-between md:p-10 lg:p-20 p-6 sm:p-8 relative overflow-hidden h-[400px] md:h-[500px] lg:h-[600px]">     {/* Background with parallax effect */}
                     <Parallax speed={0.3}>
                         <Image
                             src={Mask}
@@ -55,7 +55,7 @@ const Header = (props: Props) => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.4 }}
                         >
-                            lorem ipsum dolor sit amt consecutar
+                            Send. Receive. Pay
                         </motion.h1>
 
                         <motion.p
@@ -64,8 +64,7 @@ const Header = (props: Props) => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.6 }}
                         >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et
+                            Fast, secure, and affordable transfers to your loved ones across the globe with just a few clicks.
                         </motion.p>
 
                         <motion.div
@@ -80,7 +79,9 @@ const Header = (props: Props) => {
                                     whileTap={{ scale: 0.95 }}
                                 >
                                     <Send size={18} />
-                                    <span>Start sending</span>
+                                    <Link href={"https://app-test.ubuntu-x.com/"}>
+                                        Start sending
+                                    </Link>
                                 </motion.button>
                             </HoverScale>
 
@@ -97,7 +98,7 @@ const Header = (props: Props) => {
                     </motion.div>
 
                     {/* Phone Image Section with improved responsive design */}
-                    <div className="lg:flex-1 flex justify-center lg:justify-end items-center mt-8 lg:mt-0 relative z-10">
+                    <div className="lg:flex-1 flex justify-center lg:justify-end items-center mt-8 lg:mt-10 relative z-10">
                         <FloatingAnimation duration={4} yOffset={15}>
                             <FadeInRight delay={600}>
                                 <div className="relative">

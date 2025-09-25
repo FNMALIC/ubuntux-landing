@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600&display=swap");
 @import "tailwindcss";
 
 @layer utilities {
@@ -63,24 +64,37 @@
 }
 
 :root {
+  --ubuntu-blue: #003399;
+  --ubuntu-orange: #FF9900;
+  --ubuntu-beige: #E1DBD3;
+  --ubuntu-earth: #996137;
   --background: #ffffff;
   --foreground: #171717;
 }
 
 body {
-  font-family: "Signika Negative", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 400;
   background: var(--background);
   color: var(--foreground);
   overflow-x: hidden;
   line-height: 1.6;
-  font-size: 16px;
+  font-size: 20px;
 }
 
-/* Better text hierarchy */
 h1, h2, h3, h4, h5, h6 {
+  font-family: "League Spartan", sans-serif;
   line-height: 1.2;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 55px;
+  font-weight: 700;
+}
+
+h2, h3 {
+  font-size: 28px;
   font-weight: 600;
 }
 

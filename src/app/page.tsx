@@ -12,7 +12,7 @@ import { FadeInUp } from "@/components/animations/ScrollAnimations";
 
 export default function Home() {
   return (
-    <main className="overflow-x-hidden">
+    <main className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24">
       {/* Header with its own animations */}
       <Header />
       
@@ -22,19 +22,27 @@ export default function Home() {
       </FadeInUp>
       
       <FadeInUp delay={200}>
-        <Features />
+        <section id="features">
+          <Features />
+        </section>
       </FadeInUp>
       
       <FadeInUp delay={100}>
-        <Demo />
+        <section id="how-it-works">
+          <Demo />
+        </section>
       </FadeInUp>
       
       <FadeInUp delay={150}>
-        <Faq />
+        <section id="faqs">
+          <Faq />
+        </section>
       </FadeInUp>
       
       <FadeInUp delay={100}>
-        <Testimonial />
+        <section id="reviews">
+          <Testimonial />
+        </section>
       </FadeInUp>
       
       <FadeInUp delay={150}>

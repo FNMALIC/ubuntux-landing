@@ -38,7 +38,7 @@ const Header = (props: Props) => {
                         <Image
                             src={Mask}
                             alt="mask"
-                            className="absolute top-0 left-0 bottom-0 right-0 w-full h-full object-cover opacity-30"
+                            className="absolute top-0 left-0 bottom-0 right-0 w-full h-full object-cover opacity-30 z-50"
                         />
                     </Parallax>
 

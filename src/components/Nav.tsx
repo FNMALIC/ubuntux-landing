@@ -46,7 +46,20 @@ const Nav = (props: Props) => {
         }
     };
 
-    const menuItems = [ "Features", "How it works", "FAQs", "Reviews"];
+    const menuItems = [ 
+        { name: "Features", id: "features" }, 
+        { name: "How it works", id: "how-it-works" }, 
+        { name: "FAQs", id: "faqs" }, 
+        { name: "Reviews", id: "reviews" }
+    ];
+
+    const scrollToSection = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+        setIsOpen(false);
+    };
 
     return (
         <>
@@ -72,7 +85,7 @@ const Nav = (props: Props) => {
                 <div className="hidden lg:flex items-center flex-1 justify-center gap-10">
                     {menuItems.map((item, index) => (
                         <motion.p
-                            key={item}
+                            key={item.name}
                             className={`text-sm md:text-base font-medium tracking-wide cursor-pointer transition-colors duration-200 ${
                                 isScrolled
                                     ? 'text-gray-800 hover:text-[#FCC062]'
@@ -82,8 +95,9 @@ const Nav = (props: Props) => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
                             whileHover={{ scale: 1.05 }}
+                            onClick={() => scrollToSection(item.id)}
                         >
-                            {item}
+                            {item.name}
                         </motion.p>
                     ))}
                 </div>
@@ -146,14 +160,14 @@ const Nav = (props: Props) => {
                             <div className="flex flex-col gap-6 mb-8">
                                 {menuItems.map((item, index) => (
                                     <motion.p
-                                        key={item}
+                                        key={item.name}
                                         className="text-lg font-semibold cursor-pointer text-gray-800 hover:text-[#FCC062] transition-colors duration-200"
                                         initial={{ opacity: 0, x: 20 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: 0.1 + index * 0.1 }}
-                                        onClick={toggleMenu}
+                                        onClick={() => scrollToSection(item.id)}
                                     >
-                                        {item}
+                                        {item.name}
                                     </motion.p>
                                 ))}
                             </div>

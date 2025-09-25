@@ -57,20 +57,20 @@ const Footer = (props: Props) => {
           </motion.div>
 
           {/* Ubuntu philosophy section */}
-          <motion.div
-            className="my-8 p-4 bg-white/5 rounded-lg border-l-4 border-[#FF9900]"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <div className="flex items-center gap-2 mb-2">
-              <Heart size={16} className="text-[#FF9900]" />
-              <span className="text-[#FF9900] font-semibold text-sm">Ubuntu Philosophy</span>
-            </div>
-            <p className="text-white/90 text-sm italic">
-              "I am because we are. We are because I am." - Together we build bridges, not walls.
-            </p>
-          </motion.div>
+          {/*<motion.div*/}
+          {/*  className="my-8 p-4 bg-white/5 rounded-lg border-l-4 border-[#FF9900]"*/}
+          {/*  initial={{ opacity: 0, y: 20 }}*/}
+          {/*  animate={{ opacity: 1, y: 0 }}*/}
+          {/*  transition={{ duration: 0.6, delay: 0.3 }}*/}
+          {/*>*/}
+          {/*  <div className="flex items-center gap-2 mb-2">*/}
+          {/*    <Heart size={16} className="text-[#FF9900]" />*/}
+          {/*    <span className="text-[#FF9900] font-semibold text-sm">Ubuntu Philosophy</span>*/}
+          {/*  </div>*/}
+          {/*  <p className="text-white/90 text-sm italic">*/}
+          {/*    "I am because we are. We are because I am." - Together we build bridges, not walls.*/}
+          {/*  </p>*/}
+          {/*</motion.div>*/}
 
           {/* Bottom section */}
           <motion.div 

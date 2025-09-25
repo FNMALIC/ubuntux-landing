@@ -125,11 +125,7 @@ export default function RootLayout({
             />
         </head>
         <body className={` `}>
-        <div className="min-h-screen w-full overflow-x-hidden overflow-y-hidden">
-            <div className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24">
-                {children}
-            </div>
-        </div>
+            {children}
         </body>
         </html>
     );

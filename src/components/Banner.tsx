@@ -25,15 +25,7 @@ const Banner = (props: Props) => {
           
           {/* Content Section */}
           <div className="flex-1 z-10 text-white lg:pr-8">
-            <motion.div
-              className="flex items-center gap-3 mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <Smartphone size={32} className="text-[#003399]" />
-              <span className="text-[#003399] font-semibold text-lg">Ubuntu-X Mobile</span>
-            </motion.div>
+
 
             <motion.h2 
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 md:mb-6"
@@ -72,28 +64,28 @@ const Banner = (props: Props) => {
                   </Link>
               </HoverScale>
 
-              <HoverScale scale={1.02}>
-                <motion.button 
-                  className="flex items-center gap-2 px-6 py-4 text-lg font-medium border-2 border-white/30 rounded-lg hover:bg-white/10 transition-colors text-white"
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <ArrowRight size={18} />
-                  <span>Download App</span>
-                </motion.button>
-              </HoverScale>
+              {/*<HoverScale scale={1.02}>*/}
+              {/*  <motion.button */}
+              {/*    className="flex items-center gap-2 px-6 py-4 text-lg font-medium border-2 border-white/30 rounded-lg hover:bg-white/10 transition-colors text-white"*/}
+              {/*    whileTap={{ scale: 0.95 }}*/}
+              {/*  >*/}
+              {/*    <ArrowRight size={18} />*/}
+              {/*    <span>Download App</span>*/}
+              {/*  </motion.button>*/}
+              {/*</HoverScale>*/}
             </motion.div>
 
             {/* Ubuntu philosophy quote */}
-            <motion.div
-              className="mt-8 p-4 bg-white/10 rounded-lg border-l-4 border-[#003399]"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
-              <p className="text-white/90 italic text-sm">
-                "I am because we are" - Ubuntu philosophy
-              </p>
-            </motion.div>
+            {/*<motion.div*/}
+            {/*  className="mt-8 p-4 bg-white/10 rounded-lg border-l-4 border-[#003399]"*/}
+            {/*  initial={{ opacity: 0, y: 20 }}*/}
+            {/*  animate={{ opacity: 1, y: 0 }}*/}
+            {/*  transition={{ duration: 0.6, delay: 0.8 }}*/}
+            {/*>*/}
+            {/*  <p className="text-white/90 italic text-sm">*/}
+            {/*    "I am because we are" - Ubuntu philosophy*/}
+            {/*  </p>*/}
+            {/*</motion.div>*/}
           </div>
           
           {/* Phone Image Section */}

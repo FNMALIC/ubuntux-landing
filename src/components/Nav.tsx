@@ -109,7 +109,7 @@ const Nav = (props: Props) => {
                     whileTap={{ scale: 0.95 }}
                 >
                     <ArrowDownRight size={18} />
-                    <Link href={"https://app-test.ubuntu-x.com/"}>
+                    <Link href={"https://app.ubuntu-x.com/"}>
                        Sign In
                     </Link>
                 </motion.button>
@@ -181,7 +181,7 @@ const Nav = (props: Props) => {
                                 onClick={toggleMenu}
                             >
                                 <ArrowDownRight size={18} />
-                                <Link href={"https://app-test.ubuntu-x.com/"}>
+                                <Link href={"https://app.ubuntu-x.com/"}>
                                   Sign In
                                 </Link>
                             </motion.button>

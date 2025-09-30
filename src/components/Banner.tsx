@@ -43,7 +43,7 @@ const Banner = (props: Props) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Experience the power of community-driven finance. Available on Android and iOS.
+              Experience the power of community-driven finance.
             </motion.p>
 
             <motion.div 
@@ -92,7 +92,7 @@ const Banner = (props: Props) => {
           <div className="flex-1 flex justify-center lg:justify-end items-center relative z-10 min-h-[200px] lg:min-h-[300px]">
             <FloatingAnimation duration={4} yOffset={20}>
               <FadeInRight delay={800}>
-                <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[350px] lg:max-w-[400px] h-auto">
+                <div className="relative  scale-150 w-full max-w-[280px] sm:max-w-[320px] md:max-w-[350px] lg:max-w-[400px] h-auto">
                   <Image
                     src={Phone}
                     alt="Ubuntu-X mobile app interface"

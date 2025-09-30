@@ -488,16 +488,7 @@ const Evaluate = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 1 }}
                         >
-                            <HoverScale scale={1.05}>
-                                <motion.button
-                                    className="bg-gradient-to-r from-[#2A2D9D] to-[#21237B] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-3 min-w-[200px]"
-                                    whileTap={{ scale: 0.95 }}
-                                    disabled={!fromAmount || !fromCountry || !toCountry}
-                                >
-                                    <Calculator size={20} />
-                                    Start Transfer
-                                </motion.button>
-                            </HoverScale>
+
 
                             <HoverScale scale={1.02}>
                                 <motion.button

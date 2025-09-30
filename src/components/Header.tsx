@@ -101,7 +101,7 @@ const Header = (props: Props) => {
                     <div className="lg:flex-1 flex justify-center lg:justify-end items-center mt-8 lg:mt-10 relative z-10">
                         <FloatingAnimation duration={4} yOffset={15}>
                             <FadeInRight delay={600}>
-                                <div className="relative">
+                                <div className="relative scale-300">
                                     <Image
                                         src={Phone}
                                         alt="phone"

@@ -110,7 +110,7 @@ const Nav = (props: Props) => {
                 >
                     <ArrowDownRight size={18} />
                     <Link href={"https://app-test.ubuntu-x.com/"}>
-                        Start sending
+                       Sign In
                     </Link>
                 </motion.button>
 
@@ -182,7 +182,7 @@ const Nav = (props: Props) => {
                             >
                                 <ArrowDownRight size={18} />
                                 <Link href={"https://app-test.ubuntu-x.com/"}>
-                                    Start sending
+                                  Sign In
                                 </Link>
                             </motion.button>
                         </div>

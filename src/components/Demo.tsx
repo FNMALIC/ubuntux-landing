@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle, Smartphone } from "lucide-react";
 import DemoImage from "../images/phone.png";
+import DemoImage_2 from "../images/phone2.png";
 import Mask from "../images/Mask.png";
 
 type Props = {};
@@ -61,7 +62,7 @@ const Demo = (props: Props) => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
                         <div className="relative">
-                            <Image src={DemoImage} alt="Sender Phone" width={280} height={280} className="drop-shadow-2xl" />
+                            <Image src={DemoImage} alt="Sender Phone" width={280} height={280} className="drop-shadow-2xl  scale-250" />
 
                             <motion.div
                                 className="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-[#FCC062] text-white font-semibold py-3 px-6 rounded-full shadow-lg flex items-center gap-2"
@@ -83,9 +84,7 @@ const Demo = (props: Props) => {
                                 {isTransferring ? "Sending..." : "Send $100"}
                             </motion.div>
 
-                            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-white px-4 py-2 rounded-full shadow-md">
-                                <p className="text-sm font-semibold text-gray-700">Sender</p>
-                            </div>
+
 
                             <AnimatePresence>
                                 {isTransferring && (
@@ -119,7 +118,7 @@ const Demo = (props: Props) => {
                                                 animate={{ rotate: [0, 10, -10, 0] }}
                                                 transition={{ duration: 0.5, repeat: Infinity }}
                                             >
-                                                💵
+
                                             </motion.span>
                                             <span className="font-bold text-lg">$100</span>
                                         </div>
@@ -179,7 +178,7 @@ const Demo = (props: Props) => {
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
                         <div className="relative">
-                            <Image src={DemoImage} alt="Receiver Phone" width={280} height={280} className="drop-shadow-2xl" />
+                            <Image src={DemoImage_2} alt="Receiver Phone" width={280} height={280} className="drop-shadow-2xl  scale-250" />
 
                             <AnimatePresence>
                                 {showReceived && (
@@ -255,9 +254,7 @@ const Demo = (props: Props) => {
                                 )}
                             </AnimatePresence>
 
-                            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-white px-4 py-2 rounded-full shadow-md">
-                                <p className="text-sm font-semibold text-gray-700">Receiver</p>
-                            </div>
+
                         </div>
                     </motion.div>
                 </div>

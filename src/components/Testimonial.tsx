@@ -36,14 +36,13 @@ const Testimonial = () => {
             />
 
             <div className="text-xs">
-              <p>John Doe</p>
-              <p>@john_doe</p>
+              <p>W Fonkou</p>
+              <p>@fnmalic</p>
             </div>
           </div>
 
           <p className="text-sm text-gray-600">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Highly recommend to everyone.Very simple to use. In less than 2 minute your money is send
           </p>
         </div>
       </div>
@@ -89,16 +88,7 @@ const Testimonial = () => {
       name: "Bob Johnson",
       review: "Highly recommend to everyone.",
     },
-    // {
-    //   id: 4,
-    //   name: "Alice Brown",
-    //   review: "A fantastic experience overall.",
-    // },
-    // {
-    //   id: 5,
-    //   name: "Charlie Davis",
-    //   review: "An excellent choice for anyone.",
-    // },
+
   ];
 
   return (

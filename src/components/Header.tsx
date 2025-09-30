@@ -80,7 +80,7 @@ const Header = (props: Props) => {
                                 >
                                     <Send size={18} />
                                     <Link href={"https://app-test.ubuntu-x.com/"}>
-                                        Start sending
+                                       Sign Up
                                     </Link>
                                 </motion.button>
                             </HoverScale>

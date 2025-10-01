@@ -40,16 +40,6 @@ type Country = {
     canSendTo: boolean;
 };
 
-type Props = {
-    show?: boolean;
-    title?: string;
-    isFromCountry?: boolean;
-    onCountrySelect?: (country: Country) => void;
-    selectedCountry?: Country;
-    amount?: string;
-    onAmountChange?: (amount: string) => void;
-};
-
 const Evaluate = () => {
     const [fromCountry, setFromCountry] = useState<Country | null>(null);
     const [toCountry, setToCountry] = useState<Country | null>(null);

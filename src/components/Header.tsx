@@ -79,7 +79,7 @@ const Header = (props: Props) => {
                                     whileTap={{ scale: 0.95 }}
                                 >
                                     <Send size={18} />
-                                    <Link href={"https://app-test.ubuntu-x.com/"}>
+                                    <Link href={"https://app.ubuntu-x.com/"}>
                                        Sign Up
                                     </Link>
                                 </motion.button>

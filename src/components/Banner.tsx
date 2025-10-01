@@ -53,7 +53,7 @@ const Banner = (props: Props) => {
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <HoverScale scale={1.05}>
-                  <Link href="https://app-test.ubuntu-x.com" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://app.ubuntu-x.com" target="_blank" rel="noopener noreferrer">
                 <motion.button 
                   className="flex items-center gap-2 bg-gradient-to-b from-[#003399] to-[#002266] text-white rounded-lg px-6 py-4 text-lg font-semibold shadow-lg"
                   whileTap={{ scale: 0.95 }}

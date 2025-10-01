@@ -21,17 +21,10 @@ import UsaFlag from "../images/Usa.png";
 // Import country backgrounds
 import CameroonBg from "../images/countries background/cameroon.jpeg";
 import BeninBg from "../images/countries background/benin.jpeg";
-import CanadaBg from "../images/countries background/canada.jpeg";
 import ChinaBg from "../images/countries background/china.jpeg";
-import DubaiBg from "../images/countries background/dubai.jpeg";
 import FranceBg from "../images/countries background/france.jpeg";
-import GermanyBg from "../images/countries background/germany.jpeg";
 import GhanaBg from "../images/countries background/ghana.jpeg";
-import ItalyBg from "../images/countries background/italy.jpeg";
-import KenyaBg from "../images/countries background/kenya.jpeg";
 import NigeriaBg from "../images/countries background/nigeria.jpeg";
-import SouthAfricaBg from "../images/countries background/south_africa.jpeg";
-import SpainBg from "../images/countries background/spain.jpeg";
 import UkBg from "../images/countries background/uk.jpeg";
 import UsaBg from "../images/countries background/usa.jpeg";
 
